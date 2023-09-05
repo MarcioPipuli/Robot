@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Manual Run WEB Tests
 run-name: Manual - Web Tests Run
 on:
@@ -98,3 +99,6 @@ jobs:
           report_path: results-${{ matrix.browser }}
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           show_passed_tests: false
+=======
+
+>>>>>>> 73e7cda1f462e4c8c8ba2beb348925ff2544a046
