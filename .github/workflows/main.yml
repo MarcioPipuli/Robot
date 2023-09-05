@@ -1,6 +1,5 @@
 <<<<<<< HEAD
-name: Manual Run WEB Tests
-run-name: Manual - Web Tests Run
+name: Manual
 on:
   workflow_dispatch:
     inputs:
