@@ -11,33 +11,33 @@ on:
         - "suite 01"
         - "suite 02"
         - "suite 03"
-      if: ${{ inputs.suite ==  suite 01}}
-        teste:
-          type: choice
-          description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
-          required: true
-          options:
-          - "teste 01 - suite 01"
-          - "teste 02 - suite 01"
-          - "teste 03 - suite 01"
-      if: ${{ inputs.suite ==  suite 02}}
-        teste:
-          type: choice
-          description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
-          required: true
-          options:
-          - "teste 01 - suite 02"
-          - "teste 02 - suite 02"
-          - "teste 03 - suite 02"
-      if: ${{ inputs.suite ==  suite 03}}
-        teste:
-          type: choice
-          description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
-          required: true
-          options:
-          - "teste 01 - suite 03"
-          - "teste 02 - suite 03"
-          - "teste 03 - suite 03"
+      # if: ${{ inputs.suite ==  suite 01}}
+      #   teste:
+      #     type: choice
+      #     description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
+      #     required: true
+      #     options:
+      #     - "teste 01 - suite 01"
+      #     - "teste 02 - suite 01"
+      #     - "teste 03 - suite 01"
+      # if: ${{ inputs.suite ==  suite 02}}
+      #   teste:
+      #     type: choice
+      #     description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
+      #     required: true
+      #     options:
+      #     - "teste 01 - suite 02"
+      #     - "teste 02 - suite 02"
+      #     - "teste 03 - suite 02"
+      # if: ${{ inputs.suite ==  suite 03}}
+      #   teste:
+      #     type: choice
+      #     description: Qual teste da suite {{ inputs.suite }} deve ser executado ?
+      #     required: true
+      #     options:
+      #     - "teste 01 - suite 03"
+      #     - "teste 02 - suite 03"
+      #     - "teste 03 - suite 03"
 
 
 
