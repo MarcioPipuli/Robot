@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20230804 08:52:14.692" rpa="false" schemaversion="3">
+<suite id="s1" name="Serve-Rest-Front" source="C:\Users\Usuário\Desktop\Cursos\RobotFramework\LibBrowser\tests\serve-rest-front.robot">
+<test id="s1-t1" name="Desafio: Cadastrar um novo produto" line="17">
+<kw name="Cadastrar novo usuário para logar" library="serve-rest-front">
+<kw name="Abrir o navegador" library="serve-rest-front">
+<kw name="New Browser" library="Browser">
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230804 08:52:16.480" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Usu\u00e1rio\\Desktop\\Cursos\\RobotFramework\\LibBrowser\\reports\\browser\\traces\\18e36b30-d605-4a10-af9e-d2dc4a631a69"}</msg>
+<msg timestamp="20230804 08:52:17.008" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Usuário\\Desktop\\Cursos\\RobotFramework\\LibBrowser\\reports\\browser\\traces\\18e36b30-d605-4a10-af9e-d2dc4a631a69"}</msg>
+<status status="PASS" starttime="20230804 08:52:16.480" endtime="20230804 08:52:17.008"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20230804 08:52:17.009" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg timestamp="20230804 08:52:17.037" level="INFO">Successfully created context. </msg>
+<msg timestamp="20230804 08:52:17.038" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<status status="PASS" starttime="20230804 08:52:17.008" endtime="20230804 08:52:17.038"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:16.479" endtime="20230804 08:52:17.038"/>
+</kw>
+<kw name="Ir para o site Serve Rest Front" library="serve-rest-front">
+<kw name="New Page" library="Browser">
+<arg>url=${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230804 08:52:19.128" level="INFO">Successfully initialized new page object and opened url: https://front.serverest.dev/</msg>
+<status status="PASS" starttime="20230804 08:52:17.039" endtime="20230804 08:52:19.128"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<arg>assertion_operator===</arg>
+<arg>assertion_expected=Front - ServeRest</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230804 08:52:19.143" level="INFO">Title: 'Front - ServeRest'</msg>
+<status status="PASS" starttime="20230804 08:52:19.128" endtime="20230804 08:52:19.143"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:17.038" endtime="20230804 08:52:19.143"/>
+</kw>
+<kw name="Preencher os dados do novo usuário e cadastrar" library="serve-rest-front">
+<kw name="Click" library="Browser">
+<arg>xpath=//a[@data-testid='cadastrar']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230804 08:52:19.144" endtime="20230804 08:52:19.473"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${EMAIL}</var>
+<msg timestamp="20230804 08:52:19.475" level="INFO">${EMAIL} = hernandezerin@example.org</msg>
+<status status="PASS" starttime="20230804 08:52:19.473" endtime="20230804 08:52:19.475"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230804 08:52:19.476" level="INFO">${EMAIL} = hernandezerin@example.org</msg>
+<status status="PASS" starttime="20230804 08:52:19.475" endtime="20230804 08:52:19.476"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='nome']</arg>
+<arg>txt=Marcio Pipuli</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:19.476" level="INFO">Fills the text 'Marcio Pipuli' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:19.476" endtime="20230804 08:52:19.508"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='email']</arg>
+<arg>txt=${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:19.508" level="INFO">Fills the text 'hernandezerin@example.org' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:19.508" endtime="20230804 08:52:19.541"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='password']</arg>
+<arg>txt=5616</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:19.542" level="INFO">Fills the text '5616' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:19.541" endtime="20230804 08:52:19.566"/>
+</kw>
+<kw name="Check Checkbox" library="Browser">
+<arg>xpath=//input[@id='administrador']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" starttime="20230804 08:52:19.566" endtime="20230804 08:52:19.621"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//button[@data-testid='cadastrar']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230804 08:52:19.622" endtime="20230804 08:52:19.679"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:19.144" endtime="20230804 08:52:19.679"/>
+</kw>
+<kw name="Conferir usuário cadastrado com sucesso" library="serve-rest-front">
+<kw name="Wait For Elements State" library="Browser">
+<arg>css=h1</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20230804 08:52:24.126" level="INFO">Waited for Element with selector css=h1 at state visible</msg>
+<status status="PASS" starttime="20230804 08:52:19.679" endtime="20230804 08:52:24.126"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1</arg>
+<arg>assertion_operator===</arg>
+<arg>assertion_expected=Bem Vindo Marcio Pipuli</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.159" level="INFO">Text: 'Bem Vindo Marcio Pipuli'</msg>
+<status status="PASS" starttime="20230804 08:52:24.126" endtime="20230804 08:52:24.159"/>
+</kw>
+<kw name="Get Element States" library="Browser">
+<arg>css=button[data-testid="logout"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.198" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<status status="PASS" starttime="20230804 08:52:24.159" endtime="20230804 08:52:24.199"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:19.679" endtime="20230804 08:52:24.199"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:16.479" endtime="20230804 08:52:24.199"/>
+</kw>
+<kw name="Cadastrar um novo produto" library="serve-rest-front">
+<kw name="Click" library="Browser">
+<arg>xpath=//a[@data-testid='cadastrarProdutos']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230804 08:52:24.201" endtime="20230804 08:52:24.254"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>css=h1</arg>
+<arg>assertion_operator===</arg>
+<arg>assertion_expected=Cadastro de Produtos</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.283" level="INFO">Text: 'Cadastro de Produtos'</msg>
+<status status="PASS" starttime="20230804 08:52:24.254" endtime="20230804 08:52:24.283"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='nome']</arg>
+<arg>txt=Produto Incrível</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.284" level="INFO">Fills the text 'Produto Incrível' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:24.283" endtime="20230804 08:52:24.308"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='price']</arg>
+<arg>txt=100</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.308" level="INFO">Fills the text '100' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:24.308" endtime="20230804 08:52:24.333"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//textarea[@id='description']</arg>
+<arg>txt=Produto revolucionário que mudará a sua vida</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.333" level="INFO">Fills the text 'Produto revolucionário que mudará a sua vida' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:24.333" endtime="20230804 08:52:24.357"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>xpath=//input[@id='quantity']</arg>
+<arg>txt=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:24.358" level="INFO">Fills the text '1' in the given field.</msg>
+<status status="PASS" starttime="20230804 08:52:24.358" endtime="20230804 08:52:24.380"/>
+</kw>
+<kw name="Upload File By Selector" library="Browser">
+<arg>xpath=//input[@id='imagem']</arg>
+<arg>path=C:\\Users\\Usuário\\Desktop\\Cursos\\RobotFramework\\LibBrowser\\resources\\arquivos\\imagem.png</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from `path` to file input element matched by selector.</doc>
+<status status="PASS" starttime="20230804 08:52:24.381" endtime="20230804 08:52:24.410"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//button[@data-testid='cadastarProdutos']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230804 08:52:24.411" endtime="20230804 08:52:24.671"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:24.200" endtime="20230804 08:52:24.671"/>
+</kw>
+<kw name="Conferir que o produto aparece na listagem" library="serve-rest-front">
+<kw name="Get Table Cell Element" library="Browser">
+<var>${elemento}</var>
+<arg>css=table</arg>
+<arg>"Nome"</arg>
+<arg>"Produto revolucionário que mudará a sua vida"</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the Web Element that has the same column index and same row index as the selected elements.</doc>
+<msg timestamp="20230804 08:52:25.546" level="INFO">JavaScript executed successfully.</msg>
+<msg timestamp="20230804 08:52:25.592" level="INFO">Locator found successfully.</msg>
+<msg timestamp="20230804 08:52:25.592" level="INFO">${elemento} = css=table &gt;&gt; tr &gt;&gt; nth=4 &gt;&gt; &gt; * &gt;&gt; nth=0</msg>
+<status status="PASS" starttime="20230804 08:52:24.674" endtime="20230804 08:52:25.592"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>${elemento}</arg>
+<arg>==</arg>
+<arg>Produto Incrível</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230804 08:52:25.618" level="INFO">Text: 'Produto Incrível'</msg>
+<status status="PASS" starttime="20230804 08:52:25.592" endtime="20230804 08:52:25.618"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:24.673" endtime="20230804 08:52:25.619"/>
+</kw>
+<status status="PASS" starttime="20230804 08:52:16.475" endtime="20230804 08:52:25.619"/>
+</test>
+<status status="PASS" starttime="20230804 08:52:14.698" endtime="20230804 08:52:25.732"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Serve-Rest-Front">Serve-Rest-Front</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
